@@ -1,0 +1,70 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    Layout = null;
+    var settings = Umbraco.ContentAtRoot().OfType<Settings>().FirstOrDefault();
+    
+}
+
+@* the fun starts here *@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>@Model.Name</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span2">
+                <img src="@settings.Logo.Url" style="width: 200px; height: 100px;" />
+            </div>
+
+            <!-- Nav -->
+            <div id="nav" class="span7">
+                @foreach (var navigationItem in settings.Navigation)
+                {
+                    <a href="@navigationItem.Url">@navigationItem.Name</a>
+                }
+            </div>
+        </div>
+    </div>
+    <header>
+    </header>
+
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div>
+            <div>
+                @foreach (var contactLink in settings.ContactLinks)
+                {
+                    <a href="@contactLink.Url">@contactLink.Name</a>
+                }
+            </div>
+            <div>
+                @Umbraco.RenderMacro("FormsRenderForm", new { FormGuid = settings.ContactForm })
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    @*<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>*@
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    @*<script src="assets/js/main.js"></script>*@
+
+</body>
+</html>

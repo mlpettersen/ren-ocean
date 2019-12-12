@@ -418,9 +418,35 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="Global.asax" />
+    <Content Include="Umbraco\lib\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Umbraco\lib\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Umbraco\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Umbraco\lib\bootstrap\css\bootstrap.min.3.0.1.css" />
+    <Content Include="Umbraco\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Umbraco\lib\bootstrap\css\responsive.css" />
+    <Content Include="Umbraco\lib\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Umbraco\lib\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Umbraco\lib\bootstrap\less\tests\buttons.html" />
+    <Content Include="Umbraco\lib\bootstrap\less\tests\css-tests.css" />
+    <Content Include="Umbraco\lib\bootstrap\less\tests\css-tests.html" />
+    <Content Include="Umbraco\lib\bootstrap\less\tests\forms-responsive.html" />
+    <Content Include="Umbraco\lib\bootstrap\less\tests\forms.html" />
+    <Content Include="Umbraco\lib\bootstrap\less\tests\navbar-fixed-top.html" />
+    <Content Include="Umbraco\lib\bootstrap\less\tests\navbar-static-top.html" />
+    <Content Include="Umbraco\lib\bootstrap\less\tests\navbar.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\ContactUs.generated.cs" />
+    <Compile Include="App_Data\Models\DefaultPage.generated.cs" />
+    <Compile Include="App_Data\Models\Employee.generated.cs" />
+    <Compile Include="App_Data\Models\Employees.generated.cs" />
+    <Compile Include="App_Data\Models\File.generated.cs" />
+    <Compile Include="App_Data\Models\Folder.generated.cs" />
+    <Compile Include="App_Data\Models\Home.generated.cs" />
+    <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\Settings.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -436,6 +462,7 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="App_Data\UmbracoForms\Data\forms\636ed75c-b353-4b71-bc6f-5cdb88b72309.json" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -446,6 +473,49 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\master.cshtml" />
+    <Content Include="Umbraco\lib\bootstrap\less\accordion.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\alerts.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\bootstrap.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\button-groups.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\buttons.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\carousel.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\close.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\code.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\component-animations.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\dropdowns.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\forms.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\grid.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\hero-unit.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\labels-badges.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\layouts.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\media.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\mixins.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\modals.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\navbar.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\navs.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\pager.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\pagination.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\popovers.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\progress-bars.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\reset.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\responsive-1200px-min.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\responsive-767px-max.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\responsive-768px-979px.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\responsive-navbar.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\responsive.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\scaffolding.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\sprites.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\tables.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\thumbnails.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\tooltip.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\type.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\utilities.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\variables.less" />
+    <Content Include="Umbraco\lib\bootstrap\less\wells.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -456,6 +526,11 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\UmbracoForms\Data\datasources\" />
+    <Folder Include="App_Data\UmbracoForms\Data\prevaluesources\" />
+    <Folder Include="App_Data\UmbracoForms\Data\workflows\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

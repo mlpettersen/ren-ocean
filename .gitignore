@@ -377,3 +377,6 @@ MigrationBackup/
 
 # Ignore the Models Builder models out of date flag
 **/App_Data/Models/ood.flag
+
+# Ignore Media folder
+**/Media/
