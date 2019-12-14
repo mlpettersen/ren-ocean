@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.AboutUs>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+    <section>
+        <h1>@Model.Header</h1>
+        <p>@Model.Excerpt</p>
+        <p>@Model.Content</p>
+
+
+        @if (Model.TeamSectionHeader != null)
+        {
+            <hr />
+            <h1>@Model.TeamSectionHeader</h1>
+        }
+
+
+        @if (Model.Employees != null)
+        {
+            foreach (Employee employee in Model.Employees)
+            {
+                <div>
+                    <h3>@employee.FullName</h3>
+                    <h6>@employee.Position</h6>
+                    <p>@employee.Phone</p>
+                    <p>@employee.Email</p>
+                    <p>@employee.Bio</p>
+                </div>
+            }
+        }
+
+
+    </section>

@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ContactUs>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    Layout = null;
+    Layout = "master.cshtml";
     var employees = Umbraco.ContentAtRoot().OfType<Employees>().FirstOrDefault();
 }
 
