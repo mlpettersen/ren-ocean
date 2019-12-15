@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Contact Us</summary>
 	[PublishedModel("contactUs")]
-	public partial class ContactUs : PublishedContentModel
+	public partial class ContactUs : PublishedContentModel, IDefaultPage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,5 +44,26 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("content")]
+		public IHtmlString Content => DefaultPage.GetContent(this);
+
+		///<summary>
+		/// Excerpt
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("excerpt")]
+		public string Excerpt => DefaultPage.GetExcerpt(this);
+
+		///<summary>
+		/// Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("header")]
+		public string Header => DefaultPage.GetHeader(this);
 	}
 }

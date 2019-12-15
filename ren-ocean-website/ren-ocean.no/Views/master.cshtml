@@ -42,64 +42,56 @@
 
     </nav>
 
-
+    @Umbraco.RenderMacro("BreadCrumb")
 
     <main class="">
         @RenderBody()
     </main>
 
-    
+
     <hr />
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4">
         @if (settings.Footer != null)
         {
-        <div class="container-fluid text-center text-md-left">
-            <div class="row">
-                @foreach (var footerColumn in settings.Footer)
-                {
-                    var footerColumnContent = footerColumn.TryConvertTo<FooterContent>();
-                    if (footerColumnContent.Success)
+            <div class="container-fluid text-center text-md-left">
+                <div class="row">
+                    @foreach (var footerColumn in settings.Footer)
                     {
-                        <div class="col-md-6 mt-md-0 mt-3">
-                            <h5 class="text-uppercase">@footerColumnContent.Result.Header</h5>
-                            <p>@footerColumnContent.Result.Content</p>
-                        </div>
-                        <hr class="clearfix w-100 d-md-none pb-3">
+                        var footerColumnContent = footerColumn.TryConvertTo<FooterContent>();
+                        if (footerColumnContent.Success)
+                        {
+                            <div class="col-md-6 mt-md-0 mt-3">
+                                <h5 class="text-uppercase">@footerColumnContent.Result.Header</h5>
+                                <p>@footerColumnContent.Result.Content</p>
+                            </div>
+                            <hr class="clearfix w-100 d-md-none pb-3">
+                        }
+                        var footerColumnLinks = footerColumn.TryConvertTo<FooterLinks>();
+                        if (footerColumnLinks.Success)
+                        {
+                            <div class="col-md-3 mb-md-0 mb-3">
+                                <h5 class="text-uppercase">@footerColumnLinks.Result.Header</h5>
+                                <ul class="list-unstyled">
+                                    @foreach (var siteLink in @footerColumnLinks.Result.Links)
+                                    {
+                                        <li>
+                                            <a href="@siteLink.Url">@siteLink.Name</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        }
                     }
-                    var footerColumnLinks = footerColumn.TryConvertTo<FooterLinks>();
-                    if (footerColumnLinks.Success)
-                    {
-                        <div class="col-md-3 mb-md-0 mb-3">
-                            <h5 class="text-uppercase">@footerColumnLinks.Result.Header</h5>
-                            <ul class="list-unstyled">
-                                @foreach (var siteLink in @footerColumnLinks.Result.Links)
-                                {
-                                    <li>
-                                        <a href="@siteLink.Url">@siteLink.Name</a>
-                                    </li>
-                                }
-                            </ul>
-                        </div>
-                    }
-                }
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <div class="col-md-3 mb-md-0 mb-3">
-                    @Umbraco.RenderMacro("FormsRenderForm", new { FormGuid = settings.ContactForm })
+                    
                 </div>
             </div>
-        </div>
         }
         <div class="footer-copyright text-center py-3">
             @settings.Copyright
         </div>
     </footer>
     <!-- Footer -->
-
-
-
-
-
     <!-- Scripts -->
     @*<script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/skel.min.js"></script>

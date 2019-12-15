@@ -3,3 +3,20 @@
 @{
 	Layout = "master.cshtml";
 }
+
+<h1>@Model.Header</h1>
+<p>@Model.Excerpt</p>
+
+@if(Model.Children<Service>() != null)
+{
+    foreach(var service in Model.Children<Service>())
+    {
+        <a href="@service.Url">
+            <div>
+                <h2>@service.Header</h2>
+                <p>@service.Excerpt</p>
+            </div>
+        </a>
+        
+    }
+}
