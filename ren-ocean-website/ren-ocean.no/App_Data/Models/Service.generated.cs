@@ -46,11 +46,11 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Tools
+		/// Icon
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("tools")]
-		public IEnumerable<IPublishedContent> Tools => this.Value<IEnumerable<IPublishedContent>>("tools");
+		[ImplementPropertyType("icon")]
+		public string Icon => this.Value<string>("icon");
 
 		///<summary>
 		/// Content
