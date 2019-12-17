@@ -1,19 +1,23 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "master.cshtml";
+    Layout = "master.cshtml";
+
+    var settings = Umbraco.ContentAtRoot().OfType<Settings>().FirstOrDefault();
+
 }
 
-    <main class="">
-        <!-- Header -->
-        <header id="header" >
-            <h1>@Model.Header</h1>
-        </header>
+@Html.Partial("headerFrontPage", Model);
 
-        
+@Html.Partial("partialServices");
+
+@Html.Partial("ourTeam");
 
 
-        <div>
-            @Model.Content
-        </div>
-    </main>
+<section>
+    <div class="container">
+        <h2>@Model.Header</h2>
+        <p>@Model.Content</p>
+    </div>
+</section>
+<!-- end: FULL WIDTH PAGE -->

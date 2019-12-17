@@ -35,6 +35,10 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Header</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		string Header { get; }
+
+		/// <summary>Image Header</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IPublishedContent ImageHeader { get; }
 	}
 
 	/// <summary>Default page</summary>
@@ -94,5 +98,16 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Header</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static string GetHeader(IDefaultPage that) => that.Value<string>("header");
+
+		///<summary>
+		/// Image Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("imageHeader")]
+		public IPublishedContent ImageHeader => GetImageHeader(this);
+
+		/// <summary>Static getter for Image Header</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedContent GetImageHeader(IDefaultPage that) => that.Value<IPublishedContent>("imageHeader");
 	}
 }

@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var home = Umbraco.ContentAtRoot().OfType<Home>().FirstOrDefault();
+    var services = home.Children<Services>().FirstOrDefault();
+
+}
+
+    <section>
+        <div class="container">
+            <div class="heading-text heading-section text-center">
+                <h2>What we do</h2>
+                <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+            </div>
+            <div class="row">
+                @foreach (var service in services.Children<Service>())
+                {
+                    <div class="col-lg-4">
+                        <div class="icon-box effect medium border center">
+                            <div class="icon">
+                                <a href="@service.Url"><i class="fa fa-plug"></i></a>
+                            </div>
+                            <h3>@service.Header</h3>
+                            <p>@service.Excerpt</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>

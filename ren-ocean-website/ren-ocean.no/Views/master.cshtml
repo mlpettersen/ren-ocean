@@ -11,93 +11,37 @@
 <html>
 <head>
     <title>@Model.Name</title>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="INSPIRO" />
+    <meta name="description" content="Themeforest Template Polo">
+    <!-- Stylesheets & Fonts -->
+    <link href="~/css/plugins.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href="/">
-            <img src="@settings.Logo.Url" style="width: 200px; height: 70px;" />
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                @foreach (var navigationItem in settings.Navigation)
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" href="@navigationItem.Url">@navigationItem.Name</a>
-                    </li>
-                }
-
-            </ul>
-        </div>
+    <div class="body-inner">
 
 
 
-    </nav>
+        @*@Umbraco.RenderMacro("BreadCrumb")*@
 
-    @Umbraco.RenderMacro("BreadCrumb")
 
-    <main class="">
         @RenderBody()
-    </main>
 
 
-    <hr />
-    <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4">
-        @if (settings.Footer != null)
-        {
-            <div class="container-fluid text-center text-md-left">
-                <div class="row">
-                    @foreach (var footerColumn in settings.Footer)
-                    {
-                        var footerColumnContent = footerColumn.TryConvertTo<FooterContent>();
-                        if (footerColumnContent.Success)
-                        {
-                            <div class="col-md-6 mt-md-0 mt-3">
-                                <h5 class="text-uppercase">@footerColumnContent.Result.Header</h5>
-                                <p>@footerColumnContent.Result.Content</p>
-                            </div>
-                            <hr class="clearfix w-100 d-md-none pb-3">
-                        }
-                        var footerColumnLinks = footerColumn.TryConvertTo<FooterLinks>();
-                        if (footerColumnLinks.Success)
-                        {
-                            <div class="col-md-3 mb-md-0 mb-3">
-                                <h5 class="text-uppercase">@footerColumnLinks.Result.Header</h5>
-                                <ul class="list-unstyled">
-                                    @foreach (var siteLink in @footerColumnLinks.Result.Links)
-                                    {
-                                        <li>
-                                            <a href="@siteLink.Url">@siteLink.Name</a>
-                                        </li>
-                                    }
-                                </ul>
-                            </div>
-                        }
-                    }
-                    
-                </div>
-            </div>
-        }
-        <div class="footer-copyright text-center py-3">
-            @settings.Copyright
-        </div>
-    </footer>
-    <!-- Footer -->
-    <!-- Scripts -->
-    @*<script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/skel.min.js"></script>
-        <script src="assets/js/util.js"></script>*@
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-    @*<script src="assets/js/main.js"></script>*@
+
+        @Html.Partial("footer");
+    </div>
+
+       
+
+        <!--Plugins-->
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/plugins.js"></script>
+        <!--Template functions-->
+        <script src="scripts/functions.js"></script>
 
 </body>
 </html>

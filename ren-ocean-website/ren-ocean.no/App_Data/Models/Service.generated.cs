@@ -72,5 +72,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("header")]
 		public string Header => DefaultPage.GetHeader(this);
+
+		///<summary>
+		/// Image Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("imageHeader")]
+		public IPublishedContent ImageHeader => DefaultPage.GetImageHeader(this);
 	}
 }

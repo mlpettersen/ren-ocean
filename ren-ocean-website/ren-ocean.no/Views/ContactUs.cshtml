@@ -2,19 +2,70 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
+
+    var settings = Umbraco.ContentAtRoot().OfType<Settings>().FirstOrDefault();
+
     var employees = Umbraco.ContentAtRoot().OfType<Employees>().FirstOrDefault();
 }
 
-    <h1>
-        @Model.Header
-    </h1>
-    <p>@Model.Excerpt</p>
-    <p>@Model.Content</p>
+<!-- Header -->
+<header id="header" class="dark submenu-light" data-fullwidth="true" data-transparent="true">
+    <div class="header-inner">
+        <div class="container">
+            <!--Logo-->
+            <div id="logo">
+                <a href="/">
 
-@foreach (var employee in employees.Children<Employee>())
-{
-    <span>@employee.FullName</span>
-    <span>@employee.Position</span>
-    <span>@employee.Phone</span>
-    <span>@employee.Email</span>
-}
+                    <img class="logo-dark" src="@settings.Logo.Url" />
+                    <img class="logo-default" src="@settings.Logo.Url" />
+                </a>
+            </div>
+            <!--End: Logo-->
+            <!--Navigation Resposnive Trigger-->
+            <div id="mainMenu-trigger">
+                <a class="lines-button x"> <span class="lines"></span> </a>
+            </div>
+            <!--end: Navigation Resposnive Trigger-->
+            <!--Navigation-->
+            <div id="mainMenu">
+                <div class="container">
+                    <nav>
+                        <ul>
+                            @foreach (var navigationItem in settings.Navigation)
+                            {
+                                <li>
+                                    <a href="@navigationItem.Url">@navigationItem.Name</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--end: Navigation-->
+        </div>
+    </div>
+</header>
+<!-- end: Header -->
+<!-- Page title -->
+<section id="page-title" data-bg-parallax="@Model.ImageHeader">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="page-title">
+            <h1 class="text-uppercase text-medium">@Model.Header</h1>
+            <span>@Model.Excerpt</span>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    
+    <div class="container">
+
+        <p>@Model.Content</p>
+    </div>
+</section>
+

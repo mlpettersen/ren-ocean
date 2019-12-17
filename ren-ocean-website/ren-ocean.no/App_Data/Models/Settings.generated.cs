@@ -53,11 +53,32 @@ namespace Umbraco.Web.PublishedModels
 		public string Copyright => this.Value<string>("copyright");
 
 		///<summary>
-		/// Footer
+		/// FooterColumns
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("footer")]
-		public IEnumerable<IPublishedElement> Footer => this.Value<IEnumerable<IPublishedElement>>("footer");
+		[ImplementPropertyType("footerColumns")]
+		public IEnumerable<FooterLinks> FooterColumns => this.Value<IEnumerable<FooterLinks>>("footerColumns");
+
+		///<summary>
+		/// Footer Info Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerInfoContent")]
+		public IHtmlString FooterInfoContent => this.Value<IHtmlString>("footerInfoContent");
+
+		///<summary>
+		/// Footer Info Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("footerInfoHeader")]
+		public string FooterInfoHeader => this.Value<string>("footerInfoHeader");
+
+		///<summary>
+		/// Header Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("headerImage")]
+		public IPublishedContent HeaderImage => this.Value<IPublishedContent>("headerImage");
 
 		///<summary>
 		/// Logo
