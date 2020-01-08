@@ -448,6 +448,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\Models\AboutUs.generated.cs" />
+    <Compile Include="App_Data\Models\Button.generated.cs" />
     <Compile Include="App_Data\Models\ContactUs.generated.cs" />
     <Compile Include="App_Data\Models\DefaultPage.generated.cs" />
     <Compile Include="App_Data\Models\Employee.generated.cs" />
@@ -455,6 +456,7 @@
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\FooterLinks.generated.cs" />
+    <Compile Include="App_Data\Models\FrontPageColumn.generated.cs" />
     <Compile Include="App_Data\Models\Home.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
@@ -546,6 +548,7 @@
     <Content Include="Views\Partials\headerDefault.cshtml" />
     <Content Include="Views\Partials\headerFrontPage.cshtml" />
     <Content Include="Views\Partials\ourTeam.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

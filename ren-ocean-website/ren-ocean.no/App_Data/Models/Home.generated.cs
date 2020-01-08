@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IDefaultPage
+	public partial class Home : PublishedContentModel, IButton, IDefaultPage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,11 +46,46 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Columns
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("columns")]
+		public IEnumerable<FrontPageColumn> Columns => this.Value<IEnumerable<FrontPageColumn>>("columns");
+
+		///<summary>
 		/// Header Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("headerImage")]
 		public IPublishedContent HeaderImage => this.Value<IPublishedContent>("headerImage");
+
+		///<summary>
+		/// Image Header Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("imageHeaderText")]
+		public string ImageHeaderText => this.Value<string>("imageHeaderText");
+
+		///<summary>
+		/// Pre Header Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("preHeaderText")]
+		public string PreHeaderText => this.Value<string>("preHeaderText");
+
+		///<summary>
+		/// Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("link")]
+		public Umbraco.Web.Models.Link Link => Button.GetLink(this);
+
+		///<summary>
+		/// Name Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("nameValue")]
+		public string NameValue => Button.GetNameValue(this);
 
 		///<summary>
 		/// Content
@@ -60,24 +95,10 @@ namespace Umbraco.Web.PublishedModels
 		public IHtmlString Content => DefaultPage.GetContent(this);
 
 		///<summary>
-		/// Excerpt
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("excerpt")]
-		public string Excerpt => DefaultPage.GetExcerpt(this);
-
-		///<summary>
 		/// Header
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("header")]
 		public string Header => DefaultPage.GetHeader(this);
-
-		///<summary>
-		/// Image Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public IPublishedContent ImageHeader => DefaultPage.GetImageHeader(this);
 	}
 }

@@ -53,24 +53,10 @@ namespace Umbraco.Web.PublishedModels
 		public IHtmlString Content => DefaultPage.GetContent(this);
 
 		///<summary>
-		/// Excerpt
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("excerpt")]
-		public string Excerpt => DefaultPage.GetExcerpt(this);
-
-		///<summary>
 		/// Header
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("header")]
 		public string Header => DefaultPage.GetHeader(this);
-
-		///<summary>
-		/// Image Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public IPublishedContent ImageHeader => DefaultPage.GetImageHeader(this);
 	}
 }

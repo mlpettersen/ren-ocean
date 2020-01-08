@@ -2,13 +2,15 @@
 @{
     
     var employees = Umbraco.ContentAtRoot().OfType<Employees>().FirstOrDefault();
+    var home = Umbraco.ContentAtRoot().OfType<Home>().FirstOrDefault();
+    var about = home.Children().OfType<AboutUs>().FirstOrDefault();
 }
 
 <section class="background-grey">
     <div class="container">
         <div class="heading-text heading-section text-center">
-            <h2>OUR TEAM</h2>
-            <span class="lead">Create amaThe most happiest time of the day!.</span>
+            <h2>@about.TeamSectionHeader</h2>
+            <span class="lead">@about.TeamExcerpt</span>
         </div>
         <div class="row team-members team-members-shadow m-b-40">
             @foreach (var employee in employees.Children<Employee>())

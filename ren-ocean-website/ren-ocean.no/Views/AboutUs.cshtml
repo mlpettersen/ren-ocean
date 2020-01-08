@@ -45,16 +45,16 @@
 <!-- end: Header -->
 <!-- Page title -->
 @*<section id="page-title" data-bg-parallax="@Model.ImageHeader.Url">
-    <div class="bg-overlay"></div>
-    <div class="container">
-        <div class="page-title">
-            <h1 class="text-uppercase text-medium">@Model.Header</h1>
-            <span>@Model.Excerpt</span>
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="page-title">
+                <h1 class="text-uppercase text-medium">@Model.Header</h1>
+                <span>@Model.Excerpt</span>
 
 
+            </div>
         </div>
-    </div>
-</section>*@
+    </section>*@
 
 
 <section>
@@ -62,3 +62,6 @@
         <p>@Model.Content</p>
     </div>
 </section>
+
+
+@Html.Partial("ourTeam");

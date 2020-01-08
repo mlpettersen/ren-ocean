@@ -20,57 +20,64 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Service</summary>
-	[PublishedModel("service")]
-	public partial class Service : PublishedContentModel, IDefaultPage
+	// Mixin Content Type with alias "button"
+	/// <summary>Button</summary>
+	public partial interface IButton : IPublishedContent
+	{
+		/// <summary>Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		Umbraco.Web.Models.Link Link { get; }
+
+		/// <summary>Name Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string NameValue { get; }
+	}
+
+	/// <summary>Button</summary>
+	[PublishedModel("button")]
+	public partial class Button : PublishedContentModel, IButton
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "service";
+		public new const string ModelTypeAlias = "button";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Service, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Button, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Service(IPublishedContent content)
+		public Button(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Excerpt
+		/// Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("excerpt")]
-		public string Excerpt => this.Value<string>("excerpt");
+		[ImplementPropertyType("link")]
+		public Umbraco.Web.Models.Link Link => GetLink(this);
+
+		/// <summary>Static getter for Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static Umbraco.Web.Models.Link GetLink(IButton that) => that.Value<Umbraco.Web.Models.Link>("link");
 
 		///<summary>
-		/// Service Image
+		/// Name Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("serviceImage")]
-		public IPublishedContent ServiceImage => this.Value<IPublishedContent>("serviceImage");
+		[ImplementPropertyType("nameValue")]
+		public string NameValue => GetNameValue(this);
 
-		///<summary>
-		/// Content
-		///</summary>
+		/// <summary>Static getter for Name Name</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("content")]
-		public IHtmlString Content => DefaultPage.GetContent(this);
-
-		///<summary>
-		/// Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("header")]
-		public string Header => DefaultPage.GetHeader(this);
+		public static string GetNameValue(IButton that) => that.Value<string>("nameValue");
 	}
 }

@@ -28,17 +28,9 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		IHtmlString Content { get; }
 
-		/// <summary>Excerpt</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		string Excerpt { get; }
-
 		/// <summary>Header</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		string Header { get; }
-
-		/// <summary>Image Header</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		IPublishedContent ImageHeader { get; }
 	}
 
 	/// <summary>Default page</summary>
@@ -78,17 +70,6 @@ namespace Umbraco.Web.PublishedModels
 		public static IHtmlString GetContent(IDefaultPage that) => that.Value<IHtmlString>("content");
 
 		///<summary>
-		/// Excerpt
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("excerpt")]
-		public string Excerpt => GetExcerpt(this);
-
-		/// <summary>Static getter for Excerpt</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static string GetExcerpt(IDefaultPage that) => that.Value<string>("excerpt");
-
-		///<summary>
 		/// Header
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -98,16 +79,5 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Header</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static string GetHeader(IDefaultPage that) => that.Value<string>("header");
-
-		///<summary>
-		/// Image Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public IPublishedContent ImageHeader => GetImageHeader(this);
-
-		/// <summary>Static getter for Image Header</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedContent GetImageHeader(IDefaultPage that) => that.Value<IPublishedContent>("imageHeader");
 	}
 }

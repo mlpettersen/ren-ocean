@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Services</summary>
 	[PublishedModel("services")]
-	public partial class Services : PublishedContentModel, IDefaultPage
+	public partial class Services : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,31 +46,17 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Content
+		/// Services Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("content")]
-		public IHtmlString Content => DefaultPage.GetContent(this);
+		[ImplementPropertyType("servicesContent")]
+		public IHtmlString ServicesContent => this.Value<IHtmlString>("servicesContent");
 
 		///<summary>
-		/// Excerpt
+		/// Services Header
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("excerpt")]
-		public string Excerpt => DefaultPage.GetExcerpt(this);
-
-		///<summary>
-		/// Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("header")]
-		public string Header => DefaultPage.GetHeader(this);
-
-		///<summary>
-		/// Image Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("imageHeader")]
-		public IPublishedContent ImageHeader => DefaultPage.GetImageHeader(this);
+		[ImplementPropertyType("servicesHeader")]
+		public string ServicesHeader => this.Value<string>("servicesHeader");
 	}
 }

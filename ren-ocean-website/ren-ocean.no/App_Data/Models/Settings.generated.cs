@@ -74,13 +74,6 @@ namespace Umbraco.Web.PublishedModels
 		public string FooterInfoHeader => this.Value<string>("footerInfoHeader");
 
 		///<summary>
-		/// Header Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("headerImage")]
-		public IPublishedContent HeaderImage => this.Value<IPublishedContent>("headerImage");
-
-		///<summary>
 		/// Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
