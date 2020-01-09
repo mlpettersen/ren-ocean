@@ -1,0 +1,9 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Tool>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+}
+
+<h1>@Model.Header</h1>
+<p>@Model.Excerpt</p>
+<p>@Model.Content</p>

@@ -1,0 +1,5 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+@{
+    var settings = Umbraco.ContentAtRoot().OfType<Settings>().FirstOrDefault();
+}
+

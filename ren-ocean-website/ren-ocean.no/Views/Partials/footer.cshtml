@@ -1,0 +1,60 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var settings = Umbraco.ContentAtRoot().OfType<Settings>().FirstOrDefault();
+}
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="footer-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="widget">
+
+                        <div class="widget-title">@settings.FooterInfoHeader</div>
+                        <p class="mb-5">
+                            @settings.FooterInfoContent
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row">
+                        @foreach (var footerColumn in settings.FooterColumns)
+                        {
+                            var footerColumnLinks = footerColumn.TryConvertTo<FooterLinks>();
+                            
+
+                            if (footerColumnLinks.Success)
+                            {
+                                <div class="col-lg-3">
+                                    <div class="widget">
+                                        <div class="widget-title">@footerColumnLinks.Result.Header</div>
+                                        <ul class="list">
+                                            @foreach (var siteLink in footerColumnLinks.Result.Links)
+                            {
+                                                <li>
+                                                    <a href="@siteLink.Url">@siteLink.Name</a>
+                                                </li>
+                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                                }
+
+                            }
+
+                            
+                        </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="copyright-content">
+        <div class="container">
+            <div class="copyright-text text-center">@settings.Copyright </div>
+        </div>
+    </div>
+</footer>
+<!-- end: Footer -->
