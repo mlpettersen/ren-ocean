@@ -13,11 +13,13 @@
         <div class="container">
             <!--Logo-->
             <div id="logo">
-                <a href="/">
-
-                    <img class="logo-dark" src="@settings.Logo.Url" />
-                    <img class="logo-default" src="@settings.Logo.Url" />
-                </a>
+                @if (settings.Logo != null)
+                {
+                    <a href="/">
+                        <img class="logo-dark" src="@settings.Logo.Url" />
+                        <img class="logo-default" src="@settings.Logo.Url" />
+                    </a>
+                }
             </div>
             <!--End: Logo-->
             <!--Navigation Resposnive Trigger-->
@@ -30,11 +32,14 @@
                 <div class="container">
                     <nav>
                         <ul>
-                            @foreach (var navigationItem in settings.Navigation)
+                            @if (settings.Navigation != null)
                             {
-                                <li>
-                                    <a href="@navigationItem.Url">@navigationItem.Name</a>
-                                </li>
+                                foreach (var navigationItem in settings.Navigation)
+                                {
+                                    <li>
+                                        <a href="@navigationItem.Url">@navigationItem.Name</a>
+                                    </li>
+                                }
                             }
                         </ul>
                     </nav>
@@ -48,7 +53,7 @@
 <!-- Inspiro Slider -->
 <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-height-xs="360">
     <!-- Slide 1 -->
-    <div class="slide kenburns" data-bg-parallax="@Model.HeaderImage.Url">
+    <div class="slide kenburns" data-bg-parallax="@(Model.HeaderImage != null? Model.HeaderImage.Url: null)">
         <div class="bg-overlay"></div>
         <div class="container">
             <div class="slide-captions text-light">
@@ -58,18 +63,23 @@
                 </span>
                 <h1 data-animate="fadeInUp" data-animate-delay="600">@Model.ImageHeaderText</h1>
                 <div data-animate="fadeInUp" data-animate-delay="900">
-                    <a href="@Model.Link.Url" type="button" class="btn btn-rounded btn-reveal btn-reveal-left"><span>@Model.NameValue</span></a>
+                    @if (Model.Link != null)
+                    {
+                        <a href="@Model.Link.Url" type="button" class="btn btn-rounded btn-reveal btn-reveal-left"><span>@Model.NameValue</span></a>
+                    }
                 </div>
                 <!-- end: Captions -->
                 <div class="row" style="padding-top:14%;">
-                    @foreach (var column in Model.Columns)
+                    @if (Model.Columns != null)
                     {
-                        <div class="col-lg-3" data-animate="fadeInUp" data-animate-delay="1200">
-                            <h4>@column.FrontDivHeader</h4>
-                            <p>@column.FrontPageText</p>
-                        </div>
+                        foreach (var column in Model.Columns)
+                        {
+                            <div class="col-lg-3" data-animate="fadeInUp" data-animate-delay="1200">
+                                <h4>@column.FrontDivHeader</h4>
+                                <p>@column.FrontPageText</p>
+                            </div>
+                        }
                     }
-                   
                 </div>
             </div>
         </div>

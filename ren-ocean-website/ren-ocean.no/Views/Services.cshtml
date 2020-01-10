@@ -12,11 +12,14 @@
         <div class="container">
             <!--Logo-->
             <div id="logo">
-                <a href="/">
+                @if (settings.Logo != null)
+                {
+                    <a href="/">
 
-                    <img class="logo-dark" src="@settings.Logo.Url" />
-                    <img class="logo-default" src="@settings.Logo.Url" />
-                </a>
+                        <img class="logo-dark" src="@settings.Logo.Url" />
+                        <img class="logo-default" src="@settings.Logo.Url" />
+                    </a>
+                }
             </div>
             <!--End: Logo-->
             <!--Navigation Resposnive Trigger-->

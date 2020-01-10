@@ -4853,5 +4853,7 @@ body[data-bg-image] { background-attachment: fixed; background-position: top cen
 @media (max-width: 576px) { .wizard > .steps ul { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   .wizard > .steps ul li { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; margin-bottom: 10px; } }
 .card .card-body .wizard { padding: 1rem; }
-
+.service-img {
+    width: 100%;
+}
         
