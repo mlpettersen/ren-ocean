@@ -6,7 +6,7 @@
     var settings = Umbraco.ContentAtRoot().OfType<Settings>().FirstOrDefault();
 }
 <!-- Header -->
-<header id="header" class="dark submenu-light" data-fullwidth="true" data-transparent="true">
+<header id="header" class="dark submenu-light" data-fullwidth="true" data-transparent="false">
     <div class="header-inner">
         <div class="container">
             <!--Logo-->
@@ -47,21 +47,22 @@
 </header>
 <!-- end: Header -->
 <!-- Page title -->
-<section id="page-title" data-bg-parallax="@Model.ServiceImage">
-    <div class="bg-overlay"></div>
-    <div class="container">
-        <div class="page-title">
-            <h1 class="text-uppercase text-medium">@Model.Header</h1>
-            <span>@Model.Excerpt</span>
+@*<section id="page-title" data-bg-parallax="@Model.ServiceImage.Url">
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="page-title">
+                <h1 class="text-uppercase text-medium">@Model.Header</h1>
+                <span>@Model.Excerpt</span>
 
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>*@
 
 
 <section>
     <div class="container">
+        <h1>@Model.Header</h1>
         <p>@Model.Content</p>
     </div>
 </section>

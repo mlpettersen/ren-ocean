@@ -425,6 +425,17 @@
     <Content Include="css\style.css" />
     <Content Include="css\theme.css" />
     <Content Include="Global.asax" />
+    <Content Include="Media\0vjhjk2s\terje.jpg" />
+    <Content Include="Media\2djntpfm\bilde6.png" />
+    <Content Include="Media\50njxflz\bilde5.png" />
+    <Content Include="Media\nqmle3bb\renocean.png" />
+    <Content Include="Media\px1j3k1l\logo.png" />
+    <Content Include="Media\rnef4jr2\bilde6.png" />
+    <Content Include="Media\vxwnlu2m\oljeplattform.jpg" />
+    <Content Include="Media\wnglknwc\external-content-duckduckgo-com.jpg" />
+    <Content Include="Media\wxwp02fp\tore.jpg" />
+    <Content Include="Media\ylzl1wrd\6bout-1506070500-9509.jpg" />
+    <Content Include="Media\ynyfohgp\jan.jpg" />
     <Content Include="scripts\functions.js" />
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\plugins.js" />
